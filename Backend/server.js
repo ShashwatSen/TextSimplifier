@@ -7,22 +7,24 @@ import { generateAIResponse } from "./main.js";
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:5500",
-  "http://127.0.0.1:5500",
-  process.env.FRONTEND_URL,
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "https://textsimplifiers.netlify.app",
+    process.env.FRONTEND_URL,
 ].filter(Boolean);
 
-app.use(
-  cors({
+app.use(cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
 
-      callback(new Error("Origin not allowed by CORS"));
+        console.error("Blocked CORS origin:", origin);
+        return callback(new Error("Origin not allowed by CORS"));
     },
-  }),
-);
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+}));
 app.use(express.json({ limit: "100kb" }));
 
 app.get("/health", (req, res) => {
