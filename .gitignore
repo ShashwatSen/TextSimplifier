@@ -1,2 +1,4 @@
-.env
+Backend/.env
 Backend/node_modules
+
+Question.md
