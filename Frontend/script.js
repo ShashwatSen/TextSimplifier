@@ -3,7 +3,7 @@ const wordLimitSlider = document.getElementById("wordLimit");
 const wordLimitValue = document.getElementById("wordLimitValue");
 const output = document.getElementById("output");
 
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://text-simplifier-api-hzy3.onrender.com";
 
 wordLimitSlider.addEventListener("input", () => {
     wordLimitValue.textContent = wordLimitSlider.value;
