@@ -121,7 +121,7 @@ Total cost per call:
 
 ## Live Deployment
 
-**Frontend:** [ADD YOUR NETLIFY URL HERE]
+**Frontend:** https://textsimplifiers.netlify.app
 
 **Backend:** https://text-simplifier-api-hzy3.onrender.com
 
